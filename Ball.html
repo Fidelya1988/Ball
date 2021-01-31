@@ -13,13 +13,13 @@
     <canvas id="canvas" width=400 height=400></canvas>
 
     <script>
-        
+
 
         var Ball = function () {
             this.x = 100;
             this.y = 100;
-            this.xSpeed = Math.floor(Math.random()*(-5));
-            this.ySpeed = Math.floor(Math.random()*(5));
+            this.xSpeed = Math.floor(Math.random() * (-5));
+            this.ySpeed = Math.floor(Math.random() * (5));
         };
         var circle = function (x, y, radius, fillCircle) {
             ctx.beginPath();
@@ -59,7 +59,7 @@
 
         var width = canvas.width;
         var height = canvas.height;
-        
+
         var ball = new Ball();
         setInterval(function () {
             ctx.clearRect(0, 0, width, height);
@@ -68,7 +68,12 @@
             ball.checkCollision();
             ctx.strokeRect(0, 0, width, height);
         }, 30);
-        var canvas
+
+        var balls = [];
+        for (var i = 0; i < 10; i++) {
+            balls.push(ball);
+        }
+       
     </script>
 </body>
 
